@@ -8,6 +8,9 @@ const envSchema = z.object({
   VAPI_PRIVATE_KEY: z.string(),
   VAPI_PUBLIC_KEY: z.string(),
   VAPI_ASSISTANT_ID: z.string(),
+  GEMINI_API_KEY: z.string(),
+  FIRECRAWL_API_KEY: z.string(),
+  PINECONE_API_KEY: z.string(),
 });
 
 // Function to validate environment variables
@@ -18,6 +21,9 @@ const validateEnv = () => {
       VAPI_PRIVATE_KEY: process.env.VAPI_PRIVATE_KEY,
       VAPI_PUBLIC_KEY: process.env.VAPI_PUBLIC_KEY,
       VAPI_ASSISTANT_ID: process.env.VAPI_ASSISTANT_ID,
+      GEMINI_API_KEY: process.env.GEMINI_API_KEY,
+      FIRECRAWL_API_KEY: process.env.FIRECRAWL_API_KEY,
+      PINECONE_API_KEY: process.env.PINECONE_API_KEY,
     };
     const parsed = envSchema.parse(env);
     logger.info("Environment variables validated successfully");
